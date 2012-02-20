@@ -1,0 +1,5 @@
+name: CreeperDJ
+author: Brettflan
+description: Creepers have a chance to drop any record, not just green or gold.
+version: 1.1
+main: com.wimbli.creeperdj.CreeperDJ

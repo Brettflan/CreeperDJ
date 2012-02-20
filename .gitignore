@@ -1,0 +1,7 @@
+/build
+/dist
+/nbproject/private
+/nbproject/pmd.settings
+/nbproject/findbugs.settings
+
+/lib/bukkit.jar
