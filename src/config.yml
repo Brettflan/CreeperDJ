@@ -1,5 +1,5 @@
-# Note that, when killed by a skeleton, the record dropped by creepers will now be any of the 11 records record instead of just the old original 2 records regardless of the below settings.
-# If you don't want creepers to occasionally drop records when killed by players, set record_drop_percentage to 0.0 below.
+# Note that, when killed by a skeleton, the record dropped by creepers will be any of the first 10 of the 11 records, as of Minecraft 1.2.3.
+# If you don't want creepers to occasionally drop records under any other circumstances, this plugin is no longer necessary.
 # 
 # record_drop_percentage: percentage chance of creepers randomly dropping a record (assuming they're not already dropping one from being killed by a skeleton); valid range is 0.0 to 100.0
 # player_kills_only: whether the random record drops will only occur if the creeper is directly killed by a player; if false, any creeper deaths (such as by mob farm) will be accepted

@@ -16,7 +16,6 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 
@@ -31,8 +30,7 @@ public class CreeperDJ extends JavaPlugin
 	@Override
 	public void onEnable()
 	{
-		this.
-		cfg = getConfig();
+		this.cfg = getConfig();
 		cfg.options().copyDefaults(true);
 		saveConfig();
 		double perc = cfg.getDouble("record_drop_percentage", 3.0);
@@ -56,13 +54,6 @@ public class CreeperDJ extends JavaPlugin
 				return;
 
 			List<ItemStack> drops = event.getDrops();
-			for (ItemStack item : drops)
-			{
-				if (item.getType() == Material.GOLD_RECORD || item.getType() == Material.GREEN_RECORD)
-				{	// already dropping a record, presumably from being killed by a skeleton; remove it
-					drops.remove(item);
-				}
-			}
 
 			// cause of death?
 			EntityDamageEvent lastDamage = creeper.getLastDamageCause();
@@ -74,14 +65,11 @@ public class CreeperDJ extends JavaPlugin
 					killer = ((Projectile)killer).getShooter();
 			}
 
-			// it was a skeleton, so give a random record
+			// it was a skeleton, so record will be dropped anyway
 			if (killer != null && killer instanceof Skeleton)
-			{
-				drops.add(new ItemStack(randomRecord(), 1));
 				return;
-			}
 
-			// no drops except from skeleton kills?
+			// no drops?
 			if (recordDropRate <= 0.0)
 				return;
 
